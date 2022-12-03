@@ -1,4 +1,5 @@
 import numpy as np
+from time import sleep
 
 
 class NaiveBayes:
@@ -13,14 +14,32 @@ class NaiveBayes:
     # data processing
     @staticmethod
     def process_data(dFrame):
-        # df = pd.DataFrame(data)
+        print('Now Data is processing..', end='')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.')
+        sleep(.2)
+        print('.\n')
+        sleep(.2)
         weatherData = dFrame.drop(dFrame.columns[-1], axis=1)
         res_data = dFrame[dFrame.columns[-1]]
+        print('Data has been processed successfully..\n')
+        sleep(.4)
         return weatherData, res_data
 
     # Model Training
     def train_model(self):
-        print('Training Model in running..')
+        print('Training Model in running..', end='')
+        sleep(.2)
 
         for item in self.resData:
             if item == 'yes':
