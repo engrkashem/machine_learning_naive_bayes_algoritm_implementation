@@ -16,17 +16,17 @@ class NaiveBayes:
     def process_data(dFrame):
         print('Now Data is processing..', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
-        print('.')
+        print('.', end='')
         sleep(.2)
         print('.\n')
         sleep(.2)
@@ -38,9 +38,22 @@ class NaiveBayes:
 
     # Model Training
     def train_model(self):
-        print('Training Model in running..', end='')
+        print('Training your Model in running..', end='')
         sleep(.2)
-
+        print('.', end='')
+        sleep(.2)
+        print('.', end='')
+        sleep(.2)
+        print('.', end='')
+        sleep(.2)
+        print('.', end='')
+        sleep(.2)
+        print('.', end='')
+        sleep(.2)
+        print('.', end='')
+        sleep(.2)
+        print('.\n')
+        sleep(.2)
         for item in self.resData:
             if item == 'yes':
                 self.totalYes += 1
@@ -58,6 +71,8 @@ class NaiveBayes:
                         cnt += 1
                 self.trainedData[weatherStatus] = {
                     'p': cntYes, 'np': cnt-cntYes, 'tp': cnt}
+        print('Done. Now your Model is ready to TEST..\n')
+        sleep(.4)
 
     # Model testing
     def test_model(self, testDataSetList):
