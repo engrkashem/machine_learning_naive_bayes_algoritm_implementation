@@ -1,5 +1,6 @@
 import numpy as np
 from time import sleep
+from loading import loading
 
 
 class NaiveBayes:
@@ -15,45 +16,17 @@ class NaiveBayes:
     @staticmethod
     def process_data(dFrame):
         print('Now Data is processing..', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.\n')
-        sleep(.2)
+        loading
         weatherData = dFrame.drop(dFrame.columns[-1], axis=1)
         res_data = dFrame[dFrame.columns[-1]]
-        print('Data has been processed successfully..\n')
+        print('Data has been processed successfully.\n')
         sleep(.4)
         return weatherData, res_data
 
     # Model Training
     def train_model(self):
         print('Training your Model in running..', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.', end='')
-        sleep(.2)
-        print('.\n')
-        sleep(.2)
+        loading()
         for item in self.resData:
             if item == 'yes':
                 self.totalYes += 1
@@ -71,12 +44,13 @@ class NaiveBayes:
                         cnt += 1
                 self.trainedData[weatherStatus] = {
                     'p': cntYes, 'np': cnt-cntYes, 'tp': cnt}
-        print('Done. Now your Model is ready to TEST..\n')
+        print('Now your Model is ready to TEST.\n')
         sleep(.4)
 
     # Model testing
     def test_model(self, testDataSetList):
-        print('Testing you model...')
+        print('Testing you model...', end='')
+        loading()
         # for played condition
         sum_nom_played = self.totalYes/self.totalData
         sum_denom_played = 1
@@ -96,5 +70,4 @@ class NaiveBayes:
             sum_denom_not_played *= self.trainedData[weatherStatus]['tp'] / \
                 self.totalData
         sum_not_played = sum_nom_not_played/sum_denom_not_played
-
         return sum_played, sum_not_played

@@ -1,5 +1,6 @@
 import time
 import pandas as pd
+from loading import loading
 
 data = {
     "Outlook": ["Rainy", "Rainy", "Overcast", "Sunny", "Sunny", "Sunny", "Overcast", "Rainy", "Rainy", "Sunny", "Rainy", "Overcast", "Overcast", "Sunny"],
@@ -11,21 +12,7 @@ data = {
 
 
 print("Converting dataset to csv format Started.", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".", end=' ')
-time.sleep(0.15)
-print(".\n")
-time.sleep(0.15)
+loading()
 dframe = pd.DataFrame.from_dict(data, orient="index")
 dframe.to_csv("data.csv")
 print("You CSV file is ready. Now you can train your model\n")
