@@ -81,10 +81,10 @@ class NaiveBayes:
         sum_nom_played = self.totalYes/self.totalData
         sum_denom_played = 1
         for weatherStatus in testDataSetList:
-            sum_nom_played *= self.trainedData[weatherStatus]['p'] / \
-                self.totalYes
-            sum_denom_played *= self.trainedData[weatherStatus]['tp'] / \
-                self.totalData
+            sum_nom_played *= (self.trainedData[weatherStatus]
+                               ['p'] / self.totalYes)
+            sum_denom_played *= (self.trainedData[weatherStatus]
+                                 ['tp'] / self.totalData)
         sum_played = sum_nom_played/sum_denom_played
 
         # for not played condition
@@ -97,4 +97,4 @@ class NaiveBayes:
                 self.totalData
         sum_not_played = sum_nom_not_played/sum_denom_not_played
 
-        print(sum_played, sum_not_played)
+        return sum_played, sum_not_played
