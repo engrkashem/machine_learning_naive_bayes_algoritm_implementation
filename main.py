@@ -46,7 +46,7 @@ while True:
         f'The probability of Playing Game is: {round(sum_played*100)}% and Abandond Match is: {round(sum_not_played*100)}%\n\n')
     sleep(.1)
     if sum_played > sum_not_played:
-        print(f'WOW... Weather is Good. Please start the Match..!\n\n')
+        print(f'WOW... Weather is Good. The Match can be started..!\n\n')
     else:
         print(f"OOPS... Weather is not so Good. Can't start the Match..!\n\n")
     status = input('Want to Predict Again? (y/n)')
